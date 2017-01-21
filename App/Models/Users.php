@@ -2,14 +2,19 @@
 
 namespace App\Models;
 
-
-use App\Db;
 use App\Model;
 
 class Users extends Model
+    implements HasEmail                 //èíòåğôåéñ ïî ïîëó÷åíèş ïèñüìà, íî âîçâğàùàåò âîçğàñò èç áä
 {
-    const TABLE = 'users';
-    public $email;
-    public $name;
+    const TABLE = 'persons';
+    public $firstName;
+    public $lastName;
+    public $age;
+
+    public function getEmail()
+    {
+        return $this->age;
+    }
 
 }
