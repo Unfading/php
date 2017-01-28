@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Model;
 
 class Users extends Model
-    implements HasEmail                 //интерфейс по получению письма, но возвращает возраст из бд
+    implements HasEmail
 {
     const TABLE = 'persons';
     public $firstName;
