@@ -20,6 +20,17 @@
 <body>
 <h1>Hello, world!</h1>
 
+<?php foreach($this->users as $user) : ?>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <?php if(!empty($user->firstName)) : ?>
+        <?php echo $user->firstName . " "; echo $user->lastName ?>
+        <?php endif; ?>
+    </div>
+    <div class="panel-body"><?php echo "Возраст: " . $user->age; ?></div>
+</div>
+<?php endforeach; ?>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
