@@ -18,16 +18,20 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Все новости</h1>
 
-<?php foreach($this->users as $user) : ?>
+<?php foreach($news as $article) : ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?php if(!empty($user->firstName)) : ?>
-        <?php echo $user->firstName . " "; echo $user->lastName ?>
-        <?php endif; ?>
+        <?php echo $article->title; ?>
     </div>
-    <div class="panel-body"><?php echo "Возраст: " . $user->age; ?></div>
+    <div class="panel-body">
+
+        <?php if (!empty ($article->author)): ?>
+            Автор: <?php echo $article->author->name ?>
+        <?php endif; ?>
+
+    </div>
 </div>
 <?php endforeach; ?>
 
